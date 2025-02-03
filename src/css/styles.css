@@ -1,0 +1,243 @@
+/* landingpage */
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+/* Navbar Custom */
+.landingpage-navbar {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  .landingpage-navbar .navbar-item .title {
+    font-weight: bold;
+    color: #37AFE1; /* Warna utama navbar */
+  }
+  
+  .landingpage-button {
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  
+  /* Hero Section */
+  .landingpage-hero .hero-body {
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .landingpage-hero .hero-body h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .landingpage-hero .hero-body h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  /* Features Section */
+  .landingpage-section {
+    margin-top: 40px;
+  }
+
+  .hero.is-primary {
+    position: relative; /* Dibutuhkan untuk pseudo-element */
+    background-image: url('../asset/bglanding5.webp');
+    background-size: cover; /* Memastikan gambar menutupi seluruh area */
+    background-position: center center; /* Menempatkan gambar di tengah */
+    background-attachment: fixed; /* Agar gambar tetap saat menggulir halaman */
+    color: white; /* Mengatur teks menjadi putih agar kontras dengan latar belakang */
+  }
+  
+  .hero.is-primary::before {
+    content: ''; /* Membuat elemen pseudo */
+    position: absolute; /* Agar menutupi elemen .hero */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay gelap dengan transparansi */
+    z-index: 1; /* Memberikan prioritas lebih rendah dari teks */
+  }
+  
+  .hero.is-primary > * {
+    position: relative; /* Membawa konten ke atas overlay */
+    z-index: 2;
+  }
+  
+  
+  .card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-content {
+    text-align: center;
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* About Section */
+  .landingpage-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  
+
+/* sidebar */
+.custom-sidebar {
+    background-color: #1A1A1D; /* Background dark grey */
+    color: white; /* Default text color */
+    padding: 10px;
+  }
+  
+  .custom-sidebar .menu-label {
+    color: #cccccc;
+    font-weight: bold;
+    font-size: 0.7rem;
+    margin-top: 15px;
+  }
+  
+  .custom-sidebar a {
+    color: #fffefe; /* White for links */
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 8px 0;
+    display: block;
+  }
+  
+  .custom-sidebar a:hover {
+    color: #37AFE1; /* Light gray on hover */
+  }
+  
+  .custom-sidebar .menu-list li {
+    margin-bottom: 8px;
+  }
+  
+  .custom-sidebar .button.is-white {
+    background-color: #1A1A1D; /* Matches sidebar background */
+    color: #cccccc; /* Light gray text */
+    border: 1px solid #cccccc; /* Light gray border */
+    width: 100%;
+    text-align: left;
+    margin-top: 8px;
+  }
+  
+  .custom-sidebar .button.is-white:hover {
+    background-color: #333333; /* Darker gray on hover */
+    color: #ffffff; /* White text on hover */
+    border-color: #ffffff; /* White border on hover */
+  }
+  
+  .custom-sidebar .button.is-white:focus {
+    background-color: #444444; /* Even darker gray for focus */
+    color: #ffffff;
+    border-color: #b3b3b3; /* Soft border for focus */
+  }
+  
+  /* Navbar */
+.navbar {
+    background-color: #1A1A1D; /* Warna latar belakang navbar */
+  }
+  
+  /* Gaya untuk judul (nama sistem) */
+  .navbar-item .title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: #37AFE1; /* Warna teks untuk judul sistem */
+  }
+  
+  /* Gaya tombol logout */
+  .navbar-button.is-light {
+    color: #37AFE1;
+    background-color: transparent; /* Transparan untuk tombol logout */
+    border: none; /* Tanpa border */
+  }
+  
+  .navbar-button.is-light:hover {
+    color: #ffffff;
+    background-color: #37AFE1; /* Warna latar saat hover */
+  }
+  
+  /* Gaya tautan nama pengguna */
+  .navbar-item .navbar-link {
+    color: #cfcfcf; /* Warna abu-abu terang untuk kontras */
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-item .navbar-link:hover {
+    color: #3273dc; /* Warna teks saat hover */
+  }
+  
+  /* Gaya ikon */
+  .navbar-icon {
+    font-size: 1.5rem;
+    margin-right: 8px; /* Jarak antara ikon dan teks */
+    color: #ffffff; /* Warna putih untuk ikon */
+  }
+
+  .readonly-input {
+  background-color: #f5f5f5; /* Warna abu-abu terang */
+  cursor: not-allowed; /* Memberikan kesan tidak dapat diedit */
+}
+
+.pagination-link {
+  background-color: #bebebe; /* Menetapkan latar belakang hitam */
+  color: white; /* Menetapkan teks berwarna putih agar kontras */
+  border: none; /* Menyembunyikan border default */
+}
+
+.pagination-link.is-current {
+  background-color: #333; /* Warna latar belakang lebih gelap untuk halaman aktif */
+  color: white; /* Teks tetap putih untuk halaman aktif */
+}
+
+.custom-button {
+  background-color: #1A1A1D; /* Warna latar belakang tombol */
+  color: #37AFE1; /* Warna teks tombol */
+  font-family: Arial, sans-serif; /* Font tombol */
+  border: none; /* Menghilangkan border */
+  padding: 0.5rem 1rem; /* Spasi dalam tombol */
+  border-radius: 4px; /* Membuat sudut tombol sedikit melengkung */
+  text-align: center; /* Teks rata tengah */
+  text-decoration: none; /* Menghapus garis bawah pada link */
+  display: inline-block; /* Membuat tombol sesuai konten */
+  cursor: pointer; /* Mengubah kursor menjadi pointer */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Animasi transisi saat hover */
+}
+
+.custom-button:hover {
+  background-color: #1A1A1D; /* Warna latar belakang saat hover */
+  color: #50C3F3; /* Warna teks saat hover */
+}
+
+
+  
+  
+  
+  
+  
