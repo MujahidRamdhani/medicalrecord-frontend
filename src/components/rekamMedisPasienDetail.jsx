@@ -69,7 +69,7 @@ const RekamMedisPasienDetail = () => {
 
   const getRekamMedisList = async () => {
     try {
-      const response = await axios.put(`http://localhost:9999/api/rekamMedis/HistoryRekamMedis/${No_RM}`);
+      const response = await axios.put(`http://34.142.169.61:5000/api/rekamMedis/HistoryRekamMedis/${No_RM}`);
       const rmData = Array.isArray(response.data.data) ? response.data.data : [];
       setRekamMedis(rmData);
       
@@ -92,7 +92,7 @@ const RekamMedisPasienDetail = () => {
   
   const getPasien = async () => {
     try {
-      const response = await axios.put(`http://localhost:9999/api/users/findAllUsersByNIK/${nik}`);
+      const response = await axios.put(`http://34.142.169.61:5000/api/users/findAllUsersByNIK/${nik}`);
       const pasienData = response.data.data;
       setPasien(pasienData);
       
@@ -107,7 +107,7 @@ const RekamMedisPasienDetail = () => {
     const fetchNamaPelayanan = async () => {
       console.log('role', user.role)
       try {
-        const response = await axios.get(`http://localhost:9999/api/users/${user.idRole}/${user.role}`);
+        const response = await axios.get(`http://34.142.169.61:5000/api/users/${user.idRole}/${user.role}`);
         setNamaPelayanan(response.data.data.nama);
         console.log('response rs', response.data.data.nama); 
       } catch (err) {
@@ -215,7 +215,7 @@ const RekamMedisPasienDetail = () => {
     setIsSubmitting(true);
   
     try {
-      const response = await axios.post(`http://localhost:9999/api/rekamMedis/CreateAndUpdateRekamMedis`, formattedRekamMedis);
+      const response = await axios.post(`http://34.142.169.61:5000/api/rekamMedis/CreateAndUpdateRekamMedis`, formattedRekamMedis);
 
       await getRekamMedisList();
       setLoading(!loading);
@@ -445,7 +445,7 @@ const RekamMedisPasienDetail = () => {
             </p>
             <p><strong>Tinggi Badan:</strong> {selectedRecord.Tinggi_Badan} cm</p>
             <p><strong>Berat Badan:</strong> {selectedRecord.Berat_Badan} kg</p>
-            <p><strong>Tekanan Darah:</strong> {selectedRecord.Tekanan_Darah}</p>
+            <p><strong>Tekanan Darah:</strong> {selectedRecord.Tekanan_Darah} mmHg</p>
             <p><strong>Nadi:</strong> {selectedRecord.Detak_Nadi} bpm</p>
             <p><strong>Detak Jantung:</strong> {selectedRecord.Detak_Jantung} bpm</p>
             <p><strong>Pernafasan:</strong> {selectedRecord.Pernafasan} bpm</p>

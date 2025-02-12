@@ -13,7 +13,7 @@ const DokterList = () => {
     const fetchDoctors = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:9999/api/users/findAllDokterByIdPelayanan");
+        const response = await axios.get("http://34.142.169.61:5000/api/users/findAllDokterByIdPelayanan");
         setAllDoctors(response.data.data);
       } catch (error) {
         console.error("Gagal memuat data dokter:", error);

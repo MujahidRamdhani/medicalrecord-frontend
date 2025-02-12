@@ -48,7 +48,7 @@ const PasienFormRegistrasi = () => {
     setLoading(true);
     const formattedTanggalLahir = `${tanggalLahir}T00:00:00Z`;
     try {
-      await axios.post("http://localhost:9999/api/users", {
+      await axios.post("http://34.142.169.61:5000/api/users", {
         role,
         nik,
         noRM,
@@ -127,7 +127,7 @@ const PasienFormRegistrasi = () => {
     const fetchIdPelayanan = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:9999/api/users/${user.idRole}/${user.role}`
+          `http://34.142.169.61:5000/api/users/${user.idRole}/${user.role}`
         );
         setIdPelayananKesehatan(response.data.data.id);
       } catch (err) {

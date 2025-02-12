@@ -25,9 +25,9 @@ const Welcome = () => {
       setLoading(true);
 
       if (user.role === "adminsistem") {
-        const users = await axios.get("http://localhost:9999/api/users/findAllUsers");
+        const users = await axios.get("http://34.142.169.61:5000/api/users/findAllUsers");
         const usersWithCA = users.data.data.filter((u) => u.wallet === "TRUE").length;
-        const usersWithoutCA = (await axios.get("http://localhost:9999/api/users/findAllUsersWithoutCA")).data.data.length;
+        const usersWithoutCA = (await axios.get("http://34.142.169.61:5000/api/users/findAllUsersWithoutCA")).data.data.length;
 
         setStats({
           totalUsers: users.data.data.length,
@@ -35,16 +35,16 @@ const Welcome = () => {
           usersWithoutCA,
         });
       } else if (user.role === "adminpelayanan") {
-        const totalPasien = (await axios.get("http://localhost:9999/api/users/findAllPasien")).data.data.length;
-        const totalDokter = (await axios.get(`http://localhost:9999/api/users/findAllDokterByIdPelayanan?idPelayanan=${user.idRole}`)).data.data.length;
+        const totalPasien = (await axios.get("http://34.142.169.61:5000/api/users/findAllPasien")).data.data.length;
+        const totalDokter = (await axios.get(`http://34.142.169.61:5000/api/users/findAllDokterByIdPelayanan?idPelayanan=${user.idRole}`)).data.data.length;
 
         setStats({
           totalPasien,
           totalDokter,
         });
       } else if (user.role === "dokter") {
-        const rekamMedis = (await axios.get("http://localhost:9999/api/rekamMedis/GetAllRekamMedisByDokterIdFilteredHakAksesTrue")).data.data.length;
-        const pemeriksaan = (await axios.get(`http://localhost:9999/api/users/findAllPemeriksaanByNIPDokter?nip=${user.idRole}`)).data.data.filter(
+        const rekamMedis = (await axios.get("http://34.142.169.61:5000/api/rekamMedis/GetAllRekamMedisByDokterIdFilteredHakAksesTrue")).data.data.length;
+        const pemeriksaan = (await axios.get(`http://34.142.169.61:5000/api/users/findAllPemeriksaanByNIPDokter?nip=${user.idRole}`)).data.data.filter(
           (item) => item.selesai === "BelumSelesai"
         ).length;
 
@@ -54,8 +54,8 @@ const Welcome = () => {
         });
       } 
 //       else if (user.role === "pasien") {
-//       const rekamMedisResponse = await axios.get("http://localhost:9999/api/rekamMedis/HistoryRekamMedisFilterByPasienLogin");
-//       const hakAksesResponse = await axios.get("http://localhost:9999/api/hakAkses/GetAllhakAksesByPasienNIK");
+//       const rekamMedisResponse = await axios.get("http://34.142.169.61:5000/api/rekamMedis/HistoryRekamMedisFilterByPasienLogin");
+//       const hakAksesResponse = await axios.get("http://34.142.169.61:5000/api/hakAkses/GetAllhakAksesByPasienNIK");
 
 //       const rekamMedis = rekamMedisResponse.data?.data?.length || 0;
 //       const hakAkses = hakAksesResponse.data?.data?.length || 0;
@@ -78,8 +78,8 @@ const Welcome = () => {
 // };
 
 else if (user.role === "pasien") {
-  const rekamMedisResponse = await axios.get("http://localhost:9999/api/rekamMedis/HistoryRekamMedisFilterByPasienLogin");
-  const hakAksesResponse = await axios.get("http://localhost:9999/api/hakAkses/GetAllhakAksesByPasienNIK");
+  const rekamMedisResponse = await axios.get("http://34.142.169.61:5000/api/rekamMedis/HistoryRekamMedisFilterByPasienLogin");
+  const hakAksesResponse = await axios.get("http://34.142.169.61:5000/api/hakAkses/GetAllhakAksesByPasienNIK");
 
   const rekamMedis = rekamMedisResponse.data?.data?.length || 0;
   const hakAkses = hakAksesResponse.data?.data?.length || 0;

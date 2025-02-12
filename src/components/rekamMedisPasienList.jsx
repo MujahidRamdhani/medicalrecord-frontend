@@ -32,7 +32,7 @@ const RekamMedisPasienList = () => {
       setLoading(true);
 
       const response = await axios.get(
-        "http://localhost:9999/api/rekamMedis/GetAllRekamMedisByDokterIdFilteredHakAksesTrue"
+        "http://34.142.169.61:5000/api/rekamMedis/GetAllRekamMedisByDokterIdFilteredHakAksesTrue"
       );
       const rmData = Array.isArray(response.data.data) ? response.data.data : [];
       const updatedRmData = await Promise.all(
@@ -40,7 +40,7 @@ const RekamMedisPasienList = () => {
           console.log('nik pasien', rm.NIK_Pasien)
           try {
             const pasienResponse = await axios.put(
-              `http://localhost:9999/api/users/findAllUsersByNIK/${rm.NIK_Pasien}`
+              `http://34.142.169.61:5000/api/users/findAllUsersByNIK/${rm.NIK_Pasien}`
             );
             console.log('data pasien', pasienResponse.data.data)
             return {

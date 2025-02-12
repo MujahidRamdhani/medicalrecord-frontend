@@ -22,7 +22,7 @@ const AdminListEnrollCA = () => {
         return;
       }
       setLoading(true);
-      await axios.post("http://localhost:9999/api/users/InvokeCaUser", {
+      await axios.post("http://34.142.169.61:5000/api/users/InvokeCaUser", {
         emailUser: email,
         roleUser: role,
       });
@@ -41,7 +41,7 @@ const AdminListEnrollCA = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        "http://localhost:9999/api/users/findAllUsersWithoutCA"
+        "http://34.142.169.61:5000/api/users/findAllUsersWithoutCA"
       );
       const usersData = Array.isArray(response.data.data)
         ? response.data.data
