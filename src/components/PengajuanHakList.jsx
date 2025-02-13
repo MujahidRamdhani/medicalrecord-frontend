@@ -14,7 +14,7 @@ const PengajuanHakList = () => {
 
   const getUsers = async () => {
     try {
-      const response = await axios.get("http://34.142.169.61:5000/api/users/findAllUsers");
+      const response = await axios.get("https://api.rmchain.web.id/api/users/findAllUsers");
       const usersData = Array.isArray(response.data.data) ? response.data.data : [];
       setUsers(usersData);
 

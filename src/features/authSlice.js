@@ -3,7 +3,7 @@ import axios from "axios";
 
  export const LoginUser = createAsyncThunk("user/LoginUser", async(user, thunkAPI) => {
     try {
-        const response = await axios.post('http://34.142.169.61:5000/api/users/login', {
+        const response = await axios.post('https://api.rmchain.web.id/api/users/login', {
             email: user.email,
             password: user.password
         });
@@ -20,7 +20,7 @@ import axios from "axios";
 
 export const getMe = createAsyncThunk("user/getMe", async(_, thunkAPI) => {
     try {
-        const response = await axios.get('http://34.142.169.61:5000/api/users/me');
+        const response = await axios.get('https://api.rmchain.web.id/api/users/me');
         return response.data;
     } catch (error) {
         if(error.response){
@@ -31,7 +31,7 @@ export const getMe = createAsyncThunk("user/getMe", async(_, thunkAPI) => {
 });
 
 export const LogOut = createAsyncThunk("user/LogOut", async() => {
-    await axios.delete('http://34.142.169.61:5000/api/users/logout');
+    await axios.delete('https://api.rmchain.web.id/api/users/logout');
 });
 
 const initialState = {

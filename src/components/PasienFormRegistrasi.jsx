@@ -48,7 +48,7 @@ const PasienFormRegistrasi = () => {
     setLoading(true);
     const formattedTanggalLahir = `${tanggalLahir}T00:00:00Z`;
     try {
-      await axios.post("http://34.142.169.61:5000/api/users", {
+      await axios.post("https://api.rmchain.web.id/api/users", {
         role,
         nik,
         noRM,
@@ -127,7 +127,7 @@ const PasienFormRegistrasi = () => {
     const fetchIdPelayanan = async () => {
       try {
         const response = await axios.get(
-          `http://34.142.169.61:5000/api/users/${user.idRole}/${user.role}`
+          `https://api.rmchain.web.id/api/users/${user.idRole}/${user.role}`
         );
         setIdPelayananKesehatan(response.data.data.id);
       } catch (err) {

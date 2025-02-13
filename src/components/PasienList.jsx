@@ -13,7 +13,7 @@ const PasienList = () => {
     const fetchPatients = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://34.142.169.61:5000/api/users/findAllPasien");
+        const response = await axios.get("https://api.rmchain.web.id/api/users/findAllPasien");
         setAllPatients(response.data.data);
       } catch (error) {
         console.error("Gagal memuat data pasien:", error);

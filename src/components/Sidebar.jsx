@@ -24,7 +24,7 @@ const Sidebar = ({ isSidebarOpen }) => {
       if (user && (user.role === "dokter" || user.role === "adminpelayanan")) {
         try {
           const response = await axios.get(
-            `http://34.142.169.61:5000/api/users/${user.idRole}/${user.role}`
+            `https://api.rmchain.web.id/api/users/${user.idRole}/${user.role}`
           );
           setNamaPelayanan(response.data.data.nama);
           console.log("response rs", response);

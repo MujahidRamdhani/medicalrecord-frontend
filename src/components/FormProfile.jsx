@@ -19,7 +19,7 @@ const FormProfile = () => {
     const fetchUserData = async () => {
       if (user) {
         try {
-          const response = await axios.get('http://34.142.169.61:5000/api/users/findAllUsers');
+          const response = await axios.get('https://api.rmchain.web.id/api/users/findAllUsers');
           const userFromApi = response.data.data.find(u => u.email === user.email);
           setUserData(userFromApi);
           setOriginalData(userFromApi); // Simpan salinan data asli
@@ -90,7 +90,7 @@ const FormProfile = () => {
     }
 
     try {
-      const response = await axios.put("http://34.142.169.61:5000/api/users/updateProfile", updatedData);
+      const response = await axios.put("https://api.rmchain.web.id/api/users/updateProfile", updatedData);
 
       if (response.status === 200) {
         toast.success("Profil berhasil diperbaharui!");
@@ -134,7 +134,7 @@ const FormProfile = () => {
 
     setLoading(true);
     try {
-      const response = await axios.put('http://34.142.169.61:5000/api/users/changePassword', {
+      const response = await axios.put('https://api.rmchain.web.id/api/users/changePassword', {
         newPassword,
       });
 

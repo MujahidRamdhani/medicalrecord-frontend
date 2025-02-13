@@ -24,7 +24,7 @@ const HakAksesList = () => {
       //setLoading(true);
 
       const response = await axios.get(
-        "http://34.142.169.61:5000/api/hakAkses/GetAllhakAksesByPasienNIK"
+        "https://api.rmchain.web.id/api/hakAkses/GetAllhakAksesByPasienNIK"
       );
       const usersData = Array.isArray(response.data.data)
         ? response.data.data
@@ -39,7 +39,7 @@ const HakAksesList = () => {
 
   const getDokter = async () => {
     try {
-      const response = await axios.get("http://34.142.169.61:5000/api/users/findAllUsers");
+      const response = await axios.get("https://api.rmchain.web.id/api/users/findAllUsers");
       const dokterList = response.data.data.filter(user => user.role.toUpperCase() === "DOKTER");
   
       const dokterMapping = dokterList.reduce((acc, dokter) => {
@@ -57,7 +57,7 @@ const HakAksesList = () => {
     setLoading(Id_Hak_Akses);
     try {
       const response = await axios.put(
-        `http://34.142.169.61:5000/api/hakAkses/UpdatehakAkses/${Id_Hak_Akses}`,
+        `https://api.rmchain.web.id/api/hakAkses/UpdatehakAkses/${Id_Hak_Akses}`,
         { Hak_Akses: status }
       );
       if (response.status === 200) {

@@ -20,7 +20,7 @@ const DokterJanjiTemuList = () => {
       setLoading(true);
 
       const response = await axios.get(
-        "http://34.142.169.61:5000/api/users/findAllPemeriksaanByNIPDokter"
+        "https://api.rmchain.web.id/api/users/findAllPemeriksaanByNIPDokter"
       );
       console.log('dataPemeriksaan', response.data.data)
       const usersData = Array.isArray(response.data.data)

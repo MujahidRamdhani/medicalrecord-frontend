@@ -72,7 +72,7 @@ const PelayananFormRegistrasi = () => {
     }
     setLoading(true);
     try {
-      await axios.post("http://34.142.169.61:5000/api/users", {
+      await axios.post("https://api.rmchain.web.id/api/users", {
         role,
         nip,
         nama,

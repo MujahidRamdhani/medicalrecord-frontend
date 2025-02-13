@@ -69,7 +69,7 @@ const RekamMedisPasienDetail = () => {
 
   const getRekamMedisList = async () => {
     try {
-      const response = await axios.put(`http://34.142.169.61:5000/api/rekamMedis/HistoryRekamMedis/${No_RM}`);
+      const response = await axios.put(`https://api.rmchain.web.id/api/rekamMedis/HistoryRekamMedis/${No_RM}`);
       const rmData = Array.isArray(response.data.data) ? response.data.data : [];
       setRekamMedis(rmData);
       
@@ -92,7 +92,7 @@ const RekamMedisPasienDetail = () => {
   
   const getPasien = async () => {
     try {
-      const response = await axios.put(`http://34.142.169.61:5000/api/users/findAllUsersByNIK/${nik}`);
+      const response = await axios.put(`https://api.rmchain.web.id/api/users/findAllUsersByNIK/${nik}`);
       const pasienData = response.data.data;
       setPasien(pasienData);
       
@@ -107,7 +107,7 @@ const RekamMedisPasienDetail = () => {
     const fetchNamaPelayanan = async () => {
       console.log('role', user.role)
       try {
-        const response = await axios.get(`http://34.142.169.61:5000/api/users/${user.idRole}/${user.role}`);
+        const response = await axios.get(`https://api.rmchain.web.id/api/users/${user.idRole}/${user.role}`);
         setNamaPelayanan(response.data.data.nama);
         console.log('response rs', response.data.data.nama); 
       } catch (err) {
@@ -215,7 +215,7 @@ const RekamMedisPasienDetail = () => {
     setIsSubmitting(true);
   
     try {
-      const response = await axios.post(`http://34.142.169.61:5000/api/rekamMedis/CreateAndUpdateRekamMedis`, formattedRekamMedis);
+      const response = await axios.post(`https://api.rmchain.web.id/api/rekamMedis/CreateAndUpdateRekamMedis`, formattedRekamMedis);
 
       await getRekamMedisList();
       setLoading(!loading);

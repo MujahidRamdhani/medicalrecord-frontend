@@ -19,7 +19,7 @@ const useAuthStore = create(
   loginUser: async (user) => {
     set({ isLoading: true, isError: false, message: '' });
     try {
-      const response = await axios.post('http://34.142.169.61:5000/api/users/login', {
+      const response = await axios.post('https://api.rmchain.web.id/api/users/login', {
         email: user.email,
         password: user.password,
       });
@@ -45,7 +45,7 @@ const useAuthStore = create(
       getMe: async () => {
         set({ isLoading: true, isError: false, message: '' });
         try {
-          const response = await axios.get('http://34.142.169.61:5000/api/users/me');
+          const response = await axios.get('https://api.rmchain.web.id/api/users/me');
           set({
             user: response.data,
             isSuccess: true,
@@ -67,7 +67,7 @@ const useAuthStore = create(
       // Log Out
       logout: async () => {
         try {
-          await axios.delete('http://34.142.169.61:5000/api/users/logout');
+          await axios.delete('https://api.rmchain.web.id/api/users/logout');
           
           // Clear cookies when logging out
           Cookies.remove('userEmail'); // Remove the 'userEmail' cookie

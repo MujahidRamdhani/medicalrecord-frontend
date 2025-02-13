@@ -20,7 +20,7 @@ const RekamMedisSayaList = () => {
     try {
       setLoading(true); // Mulai animasi loading
       const response = await axios.get(
-        `http://34.142.169.61:5000/api/rekamMedis/HistoryRekamMedisFilterByPasienLogin`
+        `https://api.rmchain.web.id/api/rekamMedis/HistoryRekamMedisFilterByPasienLogin`
       );
       const rmData = Array.isArray(response.data.data) ? response.data.data : [];
       setRekamMedis(rmData);

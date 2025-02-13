@@ -47,7 +47,7 @@ const PasienListKelola = () => {
 
   const fetchRecords = () => {
     axios
-      .get("http://34.142.169.61:5000/api/users/findAllPemeriksaanByIdPelayanan")
+      .get("https://api.rmchain.web.id/api/users/findAllPemeriksaanByIdPelayanan")
       .then((response) => {
         const data = response.data.data;
         setRecords(data);
@@ -61,7 +61,7 @@ const PasienListKelola = () => {
 
   useEffect(() => {
     axios
-      .get("http://34.142.169.61:5000/api/users/findAllPasien")
+      .get("https://api.rmchain.web.id/api/users/findAllPasien")
       .then((response) => {
         const options = response.data.data.map((patient) => ({
           value: patient.nik,
@@ -72,7 +72,7 @@ const PasienListKelola = () => {
       .catch((error) => console.error("Error fetching patients:", error));
 
     axios
-      .get("http://34.142.169.61:5000/api/users/findAllDokterByIdPelayanan")
+      .get("https://api.rmchain.web.id/api/users/findAllDokterByIdPelayanan")
       .then((response) => {
         const options = response.data.data.map((doctor) => ({
           value: doctor.nip,
@@ -126,7 +126,7 @@ const PasienListKelola = () => {
     const updatedRecord = { ...newRecord, tanggal: formatedTanggal };
   
     axios
-      .post("http://34.142.169.61:5000/api/users/addPemeriksaan", updatedRecord)
+      .post("https://api.rmchain.web.id/api/users/addPemeriksaan", updatedRecord)
       .then((response) => {
         toast.success("Pemeriksaan dan Hak Akses berhasil ditambahkan!");
         fetchRecords(); // Refresh tabel setelah data baru ditambahkan
